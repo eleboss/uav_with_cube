@@ -36,9 +36,11 @@ last = 0
 def ts6500_callback(mpu6500_0, mpu6500_1,mpu6500_2,mpu6500_3,mpu6500_4,mpu6500_5,mpu6500_6,mpu6500_7,mpu6500_8,mpu6500_9,mpu6500_10,mpu6500_11,mpu6500_12,mpu6500_13,mpu6500_14,mpu6500_15):
     rospy.loginfo("ts2 success!")
     global last, counter
-    if mpu6500_0.header.stamp.nsecs - last != 10000000:
-        print "2", mpu6500_0.header.stamp.nsecs - last
-    last = mpu6500_0.header.stamp.nsecs
+    # if mpu6500_0.header.stamp.nsecs - last != 10000000:
+    #     print "2", mpu6500_0.header.stamp.nsecs - last
+    # last = mpu6500_0.header.stamp.nsecs
+    if counter % 1000 == 0
+        print counter
 
     mpu6500_0_twist.append([mpu6500_0.header.stamp.secs,mpu6500_0.header.stamp.nsecs,mpu6500_0.angular_velocity.x,mpu6500_0.angular_velocity.y,mpu6500_0.angular_velocity.z,mpu6500_0.linear_acceleration.x,mpu6500_0.linear_acceleration.y,mpu6500_0.linear_acceleration.z])
     mpu6500_1_twist.append([mpu6500_1.header.stamp.secs,mpu6500_1.header.stamp.nsecs,mpu6500_1.angular_velocity.x,mpu6500_1.angular_velocity.y,mpu6500_1.angular_velocity.z,mpu6500_1.linear_acceleration.x,mpu6500_1.linear_acceleration.y,mpu6500_1.linear_acceleration.z])
@@ -78,7 +80,7 @@ def ts6500_callback(mpu6500_0, mpu6500_1,mpu6500_2,mpu6500_3,mpu6500_4,mpu6500_5
 
 
 
-rospy.init_node('logger1')
+rospy.init_node('6500')
 
 mpu6500_0_sub = message_filters.Subscriber('mpu6500_0', Imu)
 mpu6500_1_sub = message_filters.Subscriber('mpu6500_1', Imu)

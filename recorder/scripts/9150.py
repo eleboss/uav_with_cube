@@ -35,9 +35,11 @@ last = 0
 def ts9150_callback(mpu9150_0, mpu9150_1,mpu9150_2,mpu9150_3,mpu9150_4,mpu9150_5,mpu9150_6,mpu9150_7,mpu9150_8,mpu9150_9,mpu9150_10,mpu9150_11,mpu9150_12,mpu9150_13,mpu9150_14,mpu9150_15):
     rospy.loginfo("ts3 success!")
     global last, counter
-    if mpu9150_0.header.stamp.nsecs - last != 10000000:
-        print "3", mpu9150_0.header.stamp.nsecs - last
-    last = mpu9150_0.header.stamp.nsecs
+    # if mpu9150_0.header.stamp.nsecs - last != 10000000:
+    #     print "3", mpu9150_0.header.stamp.nsecs - last
+    # last = mpu9150_0.header.stamp.nsecs
+    if counter % 1000 == 0
+        print counter
 
     mpu9150_0_twist.append([mpu9150_0.header.stamp.secs,mpu9150_0.header.stamp.nsecs,mpu9150_0.angular_velocity.x,mpu9150_0.angular_velocity.y,mpu9150_0.angular_velocity.z,mpu9150_0.linear_acceleration.x,mpu9150_0.linear_acceleration.y,mpu9150_0.linear_acceleration.z])
     mpu9150_1_twist.append([mpu9150_1.header.stamp.secs,mpu9150_1.header.stamp.nsecs,mpu9150_1.angular_velocity.x,mpu9150_1.angular_velocity.y,mpu9150_1.angular_velocity.z,mpu9150_1.linear_acceleration.x,mpu9150_1.linear_acceleration.y,mpu9150_1.linear_acceleration.z])
@@ -76,7 +78,7 @@ def ts9150_callback(mpu9150_0, mpu9150_1,mpu9150_2,mpu9150_3,mpu9150_4,mpu9150_5
     counter = counter -1
 
 
-rospy.init_node('logger4')
+rospy.init_node('9150')
 
 mpu9150_0_sub = message_filters.Subscriber('mpu9150_0', Imu)
 mpu9150_1_sub = message_filters.Subscriber('mpu9150_1', Imu)

@@ -35,9 +35,11 @@ last = 0
 def ts9250_callback(mpu9250_0, mpu9250_1,mpu9250_2,mpu9250_3,mpu9250_4,mpu9250_5,mpu9250_6,mpu9250_7,mpu9250_8,mpu9250_9,mpu9250_10,mpu9250_11,mpu9250_12,mpu9250_13,mpu9250_14,mpu9250_15):
     rospy.loginfo("ts4 success!")
     global last, counter
-    if mpu9250_0.header.stamp.nsecs - last != 10000000:
-        print "4", mpu9250_0.header.stamp.nsecs - last
-    last = mpu9250_0.header.stamp.nsecs
+    # if mpu9250_0.header.stamp.nsecs - last != 10000000:
+    #     print "4", mpu9250_0.header.stamp.nsecs - last
+    # last = mpu9250_0.header.stamp.nsecs
+    if counter % 1000 == 0
+        print counter
     
     mpu9250_0_twist.append([mpu9250_0.header.stamp.secs,mpu9250_0.header.stamp.nsecs,mpu9250_0.angular_velocity.x,mpu9250_0.angular_velocity.y,mpu9250_0.angular_velocity.z,mpu9250_0.linear_acceleration.x,mpu9250_0.linear_acceleration.y,mpu9250_0.linear_acceleration.z])
     mpu9250_1_twist.append([mpu9250_1.header.stamp.secs,mpu9250_1.header.stamp.nsecs,mpu9250_1.angular_velocity.x,mpu9250_1.angular_velocity.y,mpu9250_1.angular_velocity.z,mpu9250_1.linear_acceleration.x,mpu9250_1.linear_acceleration.y,mpu9250_1.linear_acceleration.z])
@@ -75,7 +77,7 @@ def ts9250_callback(mpu9250_0, mpu9250_1,mpu9250_2,mpu9250_3,mpu9250_4,mpu9250_5
         json.dump(mpu9250_15_twist, open('./data/mpu9250_15_twist.txt','w'))
     counter = counter -1
 
-rospy.init_node('logger3')
+rospy.init_node('9250')
 
 mpu9250_0_sub = message_filters.Subscriber('mpu9250_0', Imu)
 mpu9250_1_sub = message_filters.Subscriber('mpu9250_1', Imu)
