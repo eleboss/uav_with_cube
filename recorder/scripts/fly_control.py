@@ -50,6 +50,7 @@ def callback_odom(pose):
     set_position.x = 0
     set_position.y = 0
     set_position.z = 15
+    set_yaw = 0
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
@@ -67,6 +68,7 @@ def callback_odom(pose):
     set_position.x = r*np.sin(theta)
     set_position.y = r*np.cos(theta)
     set_position.z = 15
+    set_yaw  = 0
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
@@ -84,6 +86,7 @@ def callback_odom(pose):
     set_position.x = 1
     set_position.y = r*np.sin(theta)
     set_position.z = r*np.cos(theta)
+    set_yaw = 0
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
@@ -101,6 +104,7 @@ def callback_odom(pose):
     set_position.x = r*np.sin(theta)
     set_position.y = 1
     set_position.z = r*np.cos(theta)
+    set_yaw = 0
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
@@ -118,6 +122,7 @@ def callback_odom(pose):
     set_position.x = r*np.sin(theta)
     set_position.y = r*np.cos(theta)
     set_position.z = r*np.cos(theta)
+    set_yaw = r*np.cos(theta)
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
@@ -131,6 +136,7 @@ def callback_odom(pose):
         set_position.x = random.randint(0, 15)
         set_position.y = random.randint(0, 15)
         set_position.z = random.randint(5, 15)
+        set_yaw = random(0, 3.14)
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
@@ -142,7 +148,7 @@ def callback_odom(pose):
     set_position.x = 1
     set_position.y = 1
     set_position.z = 1
-    
+    set_yaw = 0
     msg = PositionTarget(coordinate_frame=PositionTarget.FRAME_LOCAL_NED,
                              type_mask=PositionTarget.IGNORE_PX + PositionTarget.IGNORE_PY + PositionTarget.IGNORE_PZ +
                                        PositionTarget.IGNORE_AFX + PositionTarget.IGNORE_AFY + PositionTarget.IGNORE_AFZ +
