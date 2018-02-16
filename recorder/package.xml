@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>data_process</name>
+  <name>recorder</name>
   <version>0.0.0</version>
   <description>The data_process package</description>
 

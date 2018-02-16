@@ -166,7 +166,11 @@ include_directories(
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
  install(PROGRAMS
-   scripts/data_process_node.py
+   scripts/6050.py
+   scripts/6500.py
+   scripts/9150.py
+   scripts/9250.py
+   scripts/fly_contorl.py
 
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
@@ -187,7 +191,7 @@ include_directories(
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
  install(FILES
-    data_process.launch
+  recorder.launch
 #   # myfile2
    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
  )
