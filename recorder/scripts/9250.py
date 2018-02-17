@@ -33,30 +33,30 @@ counter = 1080000 # 24*60*60*1000/10   100HZ  about 6hours
 last = 0
 
 def ts9250_callback(mpu9250_0, mpu9250_1,mpu9250_2,mpu9250_3,mpu9250_4,mpu9250_5,mpu9250_6,mpu9250_7,mpu9250_8,mpu9250_9,mpu9250_10,mpu9250_11,mpu9250_12,mpu9250_13,mpu9250_14,mpu9250_15):
-    rospy.loginfo("ts4 success!")
+    #rospy.loginfo("ts4 success!")
     global last, counter
     # if mpu9250_0.header.stamp.nsecs - last != 10000000:
     #     print "4", mpu9250_0.header.stamp.nsecs - last
     # last = mpu9250_0.header.stamp.nsecs
     if counter % 1000 == 0
-        print counter
-    
-    mpu9250_0_twist.append([mpu9250_0.header.stamp.secs,mpu9250_0.header.stamp.nsecs,mpu9250_0.angular_velocity.x,mpu9250_0.angular_velocity.y,mpu9250_0.angular_velocity.z,mpu9250_0.linear_acceleration.x,mpu9250_0.linear_acceleration.y,mpu9250_0.linear_acceleration.z])
-    mpu9250_1_twist.append([mpu9250_1.header.stamp.secs,mpu9250_1.header.stamp.nsecs,mpu9250_1.angular_velocity.x,mpu9250_1.angular_velocity.y,mpu9250_1.angular_velocity.z,mpu9250_1.linear_acceleration.x,mpu9250_1.linear_acceleration.y,mpu9250_1.linear_acceleration.z])
-    mpu9250_2_twist.append([mpu9250_2.header.stamp.secs,mpu9250_2.header.stamp.nsecs,mpu9250_2.angular_velocity.x,mpu9250_2.angular_velocity.y,mpu9250_2.angular_velocity.z,mpu9250_2.linear_acceleration.x,mpu9250_2.linear_acceleration.y,mpu9250_2.linear_acceleration.z])
-    mpu9250_3_twist.append([mpu9250_3.header.stamp.secs,mpu9250_3.header.stamp.nsecs,mpu9250_3.angular_velocity.x,mpu9250_3.angular_velocity.y,mpu9250_3.angular_velocity.z,mpu9250_3.linear_acceleration.x,mpu9250_3.linear_acceleration.y,mpu9250_3.linear_acceleration.z])
-    mpu9250_4_twist.append([mpu9250_4.header.stamp.secs,mpu9250_4.header.stamp.nsecs,mpu9250_4.angular_velocity.x,mpu9250_4.angular_velocity.y,mpu9250_4.angular_velocity.z,mpu9250_4.linear_acceleration.x,mpu9250_4.linear_acceleration.y,mpu9250_4.linear_acceleration.z])
-    mpu9250_5_twist.append([mpu9250_5.header.stamp.secs,mpu9250_5.header.stamp.nsecs,mpu9250_5.angular_velocity.x,mpu9250_5.angular_velocity.y,mpu9250_5.angular_velocity.z,mpu9250_5.linear_acceleration.x,mpu9250_5.linear_acceleration.y,mpu9250_5.linear_acceleration.z])
-    mpu9250_6_twist.append([mpu9250_6.header.stamp.secs,mpu9250_6.header.stamp.nsecs,mpu9250_6.angular_velocity.x,mpu9250_6.angular_velocity.y,mpu9250_6.angular_velocity.z,mpu9250_6.linear_acceleration.x,mpu9250_6.linear_acceleration.y,mpu9250_6.linear_acceleration.z])
-    mpu9250_7_twist.append([mpu9250_7.header.stamp.secs,mpu9250_7.header.stamp.nsecs,mpu9250_7.angular_velocity.x,mpu9250_7.angular_velocity.y,mpu9250_7.angular_velocity.z,mpu9250_7.linear_acceleration.x,mpu9250_7.linear_acceleration.y,mpu9250_7.linear_acceleration.z])
-    mpu9250_8_twist.append([mpu9250_8.header.stamp.secs,mpu9250_8.header.stamp.nsecs,mpu9250_8.angular_velocity.x,mpu9250_8.angular_velocity.y,mpu9250_8.angular_velocity.z,mpu9250_8.linear_acceleration.x,mpu9250_8.linear_acceleration.y,mpu9250_8.linear_acceleration.z])
-    mpu9250_9_twist.append([mpu9250_9.header.stamp.secs,mpu9250_9.header.stamp.nsecs,mpu9250_9.angular_velocity.x,mpu9250_9.angular_velocity.y,mpu9250_9.angular_velocity.z,mpu9250_9.linear_acceleration.x,mpu9250_9.linear_acceleration.y,mpu9250_9.linear_acceleration.z])
-    mpu9250_10_twist.append([mpu9250_10.header.stamp.secs,mpu9250_10.header.stamp.nsecs,mpu9250_10.angular_velocity.x,mpu9250_10.angular_velocity.y,mpu9250_10.angular_velocity.z,mpu9250_10.linear_acceleration.x,mpu9250_10.linear_acceleration.y,mpu9250_10.linear_acceleration.z])
-    mpu9250_11_twist.append([mpu9250_11.header.stamp.secs,mpu9250_11.header.stamp.nsecs,mpu9250_11.angular_velocity.x,mpu9250_11.angular_velocity.y,mpu9250_11.angular_velocity.z,mpu9250_11.linear_acceleration.x,mpu9250_11.linear_acceleration.y,mpu9250_11.linear_acceleration.z])
-    mpu9250_12_twist.append([mpu9250_12.header.stamp.secs,mpu9250_12.header.stamp.nsecs,mpu9250_12.angular_velocity.x,mpu9250_12.angular_velocity.y,mpu9250_12.angular_velocity.z,mpu9250_12.linear_acceleration.x,mpu9250_12.linear_acceleration.y,mpu9250_12.linear_acceleration.z])
-    mpu9250_13_twist.append([mpu9250_13.header.stamp.secs,mpu9250_13.header.stamp.nsecs,mpu9250_13.angular_velocity.x,mpu9250_13.angular_velocity.y,mpu9250_13.angular_velocity.z,mpu9250_13.linear_acceleration.x,mpu9250_13.linear_acceleration.y,mpu9250_13.linear_acceleration.z])
-    mpu9250_14_twist.append([mpu9250_14.header.stamp.secs,mpu9250_14.header.stamp.nsecs,mpu9250_14.angular_velocity.x,mpu9250_14.angular_velocity.y,mpu9250_14.angular_velocity.z,mpu9250_14.linear_acceleration.x,mpu9250_14.linear_acceleration.y,mpu9250_14.linear_acceleration.z])
-    mpu9250_15_twist.append([mpu9250_15.header.stamp.secs,mpu9250_15.header.stamp.nsecs,mpu9250_15.angular_velocity.x,mpu9250_15.angular_velocity.y,mpu9250_15.angular_velocity.z,mpu9250_15.linear_acceleration.x,mpu9250_15.linear_acceleration.y,mpu9250_15.linear_acceleration.z])
+        print 'mpu9250 counter left:',counter
+    if counter >= 0:
+        mpu9250_0_twist.append([mpu9250_0.header.stamp.secs,mpu9250_0.header.stamp.nsecs,mpu9250_0.angular_velocity.x,mpu9250_0.angular_velocity.y,mpu9250_0.angular_velocity.z,mpu9250_0.linear_acceleration.x,mpu9250_0.linear_acceleration.y,mpu9250_0.linear_acceleration.z])
+        mpu9250_1_twist.append([mpu9250_1.header.stamp.secs,mpu9250_1.header.stamp.nsecs,mpu9250_1.angular_velocity.x,mpu9250_1.angular_velocity.y,mpu9250_1.angular_velocity.z,mpu9250_1.linear_acceleration.x,mpu9250_1.linear_acceleration.y,mpu9250_1.linear_acceleration.z])
+        mpu9250_2_twist.append([mpu9250_2.header.stamp.secs,mpu9250_2.header.stamp.nsecs,mpu9250_2.angular_velocity.x,mpu9250_2.angular_velocity.y,mpu9250_2.angular_velocity.z,mpu9250_2.linear_acceleration.x,mpu9250_2.linear_acceleration.y,mpu9250_2.linear_acceleration.z])
+        mpu9250_3_twist.append([mpu9250_3.header.stamp.secs,mpu9250_3.header.stamp.nsecs,mpu9250_3.angular_velocity.x,mpu9250_3.angular_velocity.y,mpu9250_3.angular_velocity.z,mpu9250_3.linear_acceleration.x,mpu9250_3.linear_acceleration.y,mpu9250_3.linear_acceleration.z])
+        mpu9250_4_twist.append([mpu9250_4.header.stamp.secs,mpu9250_4.header.stamp.nsecs,mpu9250_4.angular_velocity.x,mpu9250_4.angular_velocity.y,mpu9250_4.angular_velocity.z,mpu9250_4.linear_acceleration.x,mpu9250_4.linear_acceleration.y,mpu9250_4.linear_acceleration.z])
+        mpu9250_5_twist.append([mpu9250_5.header.stamp.secs,mpu9250_5.header.stamp.nsecs,mpu9250_5.angular_velocity.x,mpu9250_5.angular_velocity.y,mpu9250_5.angular_velocity.z,mpu9250_5.linear_acceleration.x,mpu9250_5.linear_acceleration.y,mpu9250_5.linear_acceleration.z])
+        mpu9250_6_twist.append([mpu9250_6.header.stamp.secs,mpu9250_6.header.stamp.nsecs,mpu9250_6.angular_velocity.x,mpu9250_6.angular_velocity.y,mpu9250_6.angular_velocity.z,mpu9250_6.linear_acceleration.x,mpu9250_6.linear_acceleration.y,mpu9250_6.linear_acceleration.z])
+        mpu9250_7_twist.append([mpu9250_7.header.stamp.secs,mpu9250_7.header.stamp.nsecs,mpu9250_7.angular_velocity.x,mpu9250_7.angular_velocity.y,mpu9250_7.angular_velocity.z,mpu9250_7.linear_acceleration.x,mpu9250_7.linear_acceleration.y,mpu9250_7.linear_acceleration.z])
+        mpu9250_8_twist.append([mpu9250_8.header.stamp.secs,mpu9250_8.header.stamp.nsecs,mpu9250_8.angular_velocity.x,mpu9250_8.angular_velocity.y,mpu9250_8.angular_velocity.z,mpu9250_8.linear_acceleration.x,mpu9250_8.linear_acceleration.y,mpu9250_8.linear_acceleration.z])
+        mpu9250_9_twist.append([mpu9250_9.header.stamp.secs,mpu9250_9.header.stamp.nsecs,mpu9250_9.angular_velocity.x,mpu9250_9.angular_velocity.y,mpu9250_9.angular_velocity.z,mpu9250_9.linear_acceleration.x,mpu9250_9.linear_acceleration.y,mpu9250_9.linear_acceleration.z])
+        mpu9250_10_twist.append([mpu9250_10.header.stamp.secs,mpu9250_10.header.stamp.nsecs,mpu9250_10.angular_velocity.x,mpu9250_10.angular_velocity.y,mpu9250_10.angular_velocity.z,mpu9250_10.linear_acceleration.x,mpu9250_10.linear_acceleration.y,mpu9250_10.linear_acceleration.z])
+        mpu9250_11_twist.append([mpu9250_11.header.stamp.secs,mpu9250_11.header.stamp.nsecs,mpu9250_11.angular_velocity.x,mpu9250_11.angular_velocity.y,mpu9250_11.angular_velocity.z,mpu9250_11.linear_acceleration.x,mpu9250_11.linear_acceleration.y,mpu9250_11.linear_acceleration.z])
+        mpu9250_12_twist.append([mpu9250_12.header.stamp.secs,mpu9250_12.header.stamp.nsecs,mpu9250_12.angular_velocity.x,mpu9250_12.angular_velocity.y,mpu9250_12.angular_velocity.z,mpu9250_12.linear_acceleration.x,mpu9250_12.linear_acceleration.y,mpu9250_12.linear_acceleration.z])
+        mpu9250_13_twist.append([mpu9250_13.header.stamp.secs,mpu9250_13.header.stamp.nsecs,mpu9250_13.angular_velocity.x,mpu9250_13.angular_velocity.y,mpu9250_13.angular_velocity.z,mpu9250_13.linear_acceleration.x,mpu9250_13.linear_acceleration.y,mpu9250_13.linear_acceleration.z])
+        mpu9250_14_twist.append([mpu9250_14.header.stamp.secs,mpu9250_14.header.stamp.nsecs,mpu9250_14.angular_velocity.x,mpu9250_14.angular_velocity.y,mpu9250_14.angular_velocity.z,mpu9250_14.linear_acceleration.x,mpu9250_14.linear_acceleration.y,mpu9250_14.linear_acceleration.z])
+        mpu9250_15_twist.append([mpu9250_15.header.stamp.secs,mpu9250_15.header.stamp.nsecs,mpu9250_15.angular_velocity.x,mpu9250_15.angular_velocity.y,mpu9250_15.angular_velocity.z,mpu9250_15.linear_acceleration.x,mpu9250_15.linear_acceleration.y,mpu9250_15.linear_acceleration.z])
 
     if counter == 0:
         json.dump(mpu9250_0_twist, open('./data/mpu9250_0_twist.txt','w'))
@@ -77,7 +77,7 @@ def ts9250_callback(mpu9250_0, mpu9250_1,mpu9250_2,mpu9250_3,mpu9250_4,mpu9250_5
         json.dump(mpu9250_15_twist, open('./data/mpu9250_15_twist.txt','w'))
     counter = counter -1
 
-rospy.init_node('9250')
+rospy.init_node('mpu9250')
 
 mpu9250_0_sub = message_filters.Subscriber('mpu9250_0', Imu)
 mpu9250_1_sub = message_filters.Subscriber('mpu9250_1', Imu)

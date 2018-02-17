@@ -1,8 +1,8 @@
 <launch>
 
-  <node pkg="recorder" type="6050" name="6050" ></node>
-  <node pkg="recorder" type="6500" name="6500" ></node>
-  <node pkg="recorder" type="9150" name="9150" ></node>
-  <node pkg="recorder" type="9250" name="9250" ></node>
+  <node pkg="recorder" type="6050.py" name="mpu6050" output="screen" ></node>
+  <node pkg="recorder" type="6500.py" name="mpu6500" output="screen" ></node>
+  <node pkg="recorder" type="9150.py" name="mpu9150" output="screen" ></node>
+  <node pkg="recorder" type="9250.py" name="mpu9250" output="screen" ></node>
 
 </launch>
